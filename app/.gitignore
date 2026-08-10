@@ -1,0 +1,46 @@
+# ====================================================================
+# KOTATSU-REDO: APP-LEVEL .GITIGNORE
+# ====================================================================
+
+# --------------------------------------------------------------------
+# 1. Module-Specific Build Output
+# --------------------------------------------------------------------
+# Ignores build outputs for this specific module
+/build/
+
+# --------------------------------------------------------------------
+# 2. Build Variants & Output Packages (APK / AAB)
+# --------------------------------------------------------------------
+# Android Studio / Gradle can output generated APKs to these folders.
+# NOTE: The leading slash '/' is critical here. It anchors the pattern
+# to the root of the app/ module, ignoring 'app/release/', 'app/debug/',
+# and 'app/nightly/' build outputs, while ensuring that the source files
+# inside 'app/src/release/', 'app/src/debug/', and 'app/src/nightly/'
+# are NOT ignored.
+/release/
+/debug/
+/nightly/
+
+# --------------------------------------------------------------------
+# 3. Room Database Schemas
+# --------------------------------------------------------------------
+# Room exports database schemas in JSON format to track schema changes.
+# Choose one of the following approaches:
+#
+# APPROACH A (Recommended for Team Dev / Migration Testing):
+# Track schemas in Git to compare versions and test migrations.
+# To do this, COMMENT OUT or remove the line below:
+/schemas/
+#
+# APPROACH B (Ignore schemas):
+# If you do not want to track database schemas in Git, keep the line above active.
+
+# --------------------------------------------------------------------
+# 4. Android Captures (Memory / CPU Profiling)
+# --------------------------------------------------------------------
+/captures/
+
+# --------------------------------------------------------------------
+# 5. Firebase & Google Services Configuration (Sensitive API keys)
+# --------------------------------------------------------------------
+/google-services.json

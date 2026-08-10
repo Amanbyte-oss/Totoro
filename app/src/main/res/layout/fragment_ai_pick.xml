@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="?attr/colorSurface"
+	android:fitsSystemWindows="false">
+
+	<!-- Standalone Floating Action Buttons (Transparent Edge-To-Edge Header) -->
+	<ImageButton
+		android:id="@+id/button_back"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_marginStart="4dp"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:contentDescription="@string/back"
+		android:src="@drawable/ic_arrow_back_black_24"
+		app:tint="?attr/colorOnSurface"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<TextView
+		android:id="@+id/textView_quota_badge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:background="@drawable/bg_source_badge"
+		android:backgroundTint="?attr/colorErrorContainer"
+		android:paddingHorizontal="8dp"
+		android:paddingVertical="4dp"
+		android:textColor="?attr/colorOnErrorContainer"
+		android:textSize="11sp"
+		android:textStyle="bold"
+		android:visibility="gone"
+		tools:visibility="visible"
+		tools:text="AI: 1450 remaining"
+		app:layout_constraintTop_toTopOf="@id/button_back"
+		app:layout_constraintBottom_toBottomOf="@id/button_back"
+		app:layout_constraintStart_toEndOf="@id/button_back" />
+
+	<ImageButton
+		android:id="@+id/button_clear_results"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_marginEnd="4dp"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:contentDescription="Clear results"
+		android:src="@drawable/ic_delete"
+		app:tint="?attr/colorOnSurface"
+		android:visibility="gone"
+		tools:visibility="visible"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<!-- Info Banner (fallback/partial results) -->
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_banner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:visibility="gone"
+		app:cardCornerRadius="8dp"
+		app:cardElevation="1dp"
+		app:strokeWidth="1dp"
+		app:strokeColor="?attr/colorSecondary"
+		app:cardBackgroundColor="?attr/colorSecondaryContainer"
+		app:layout_constraintTop_toBottomOf="@id/button_back"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		tools:visibility="visible">
+
+		<TextView
+			android:id="@+id/textView_banner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:textColor="?attr/colorOnSecondaryContainer"
+			android:textSize="13sp"
+			tools:text="AI is unavailable. Showing keyword-based results." />
+
+	</com.google.android.material.card.MaterialCardView>
+
+	<!-- 11.3 — Cached badge -->
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_cached_badge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginTop="4dp"
+		android:visibility="gone"
+		app:cardCornerRadius="12dp"
+		app:cardElevation="0dp"
+		app:cardBackgroundColor="?attr/colorTertiaryContainer"
+		app:layout_constraintTop_toBottomOf="@id/card_banner"
+		app:layout_constraintEnd_toEndOf="parent"
+		tools:visibility="visible">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingHorizontal="10dp"
+			android:paddingVertical="4dp"
+			android:text="@string/ai_cached_badge"
+			android:textColor="?attr/colorOnTertiaryContainer"
+			android:textSize="11sp"
+			android:textStyle="bold" />
+
+	</com.google.android.material.card.MaterialCardView>
+
+	<TextView
+		android:id="@+id/textAiMessage"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textAppearance="?attr/textAppearanceBodyLarge"
+		android:textColor="?attr/colorOnSurface"
+		android:paddingHorizontal="16dp"
+		android:paddingTop="6dp"
+		android:paddingBottom="4dp"
+		android:visibility="gone"
+		app:layout_constraintTop_toBottomOf="@id/card_cached_badge"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		tools:text="Here are some action romance manhwa picks for you ✨" />
+
+	<!-- Success Grid wrapped in SwipeRefreshLayout -->
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeRefreshLayout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:visibility="gone"
+		app:layout_constraintTop_toBottomOf="@id/textAiMessage"
+		app:layout_constraintBottom_toTopOf="@id/chip_group_history"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerView_results"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="4dp"
+			android:clipToPadding="false"
+			tools:listitem="@layout/item_ai_pick_manga"
+			tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+			tools:spanCount="3" />
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<!-- Idle/Empty State -->
+	<LinearLayout
+		android:id="@+id/layout_idle"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:padding="24dp"
+		android:visibility="visible"
+		app:layout_constraintTop_toBottomOf="@id/card_cached_badge"
+		app:layout_constraintBottom_toTopOf="@id/chip_group_history"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+
+		<!-- Removed large icon for minimalist look -->
+		<TextView
+			android:id="@+id/textView_idle_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="What are you in the mood for?"
+			android:textColor="?attr/colorOnSurface"
+			android:textSize="22sp"
+			android:textStyle="bold"
+			android:letterSpacing="-0.02" />
+
+		<TextView
+			android:id="@+id/textView_idle_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:gravity="center"
+			android:text="Describe a genre, type, or vibe"
+			android:textColor="?attr/colorOnSurfaceVariant"
+			android:textSize="14sp" />
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@+id/chip_example1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="4dp"
+				android:background="@drawable/bg_source_badge"
+				android:backgroundTint="?attr/colorSecondaryContainer"
+				android:paddingHorizontal="12dp"
+				android:paddingVertical="8dp"
+				android:text="Action romance"
+				android:textColor="?attr/colorOnSecondaryContainer"
+				android:textSize="13sp"
+				android:clickable="true"
+				android:focusable="true"
+				android:contentDescription="Search for action romance"
+				android:importantForAccessibility="yes" />
+
+			<TextView
+				android:id="@+id/chip_example2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="4dp"
+				android:background="@drawable/bg_source_badge"
+				android:backgroundTint="?attr/colorSecondaryContainer"
+				android:paddingHorizontal="12dp"
+				android:paddingVertical="8dp"
+				android:text="Isekai fantasy"
+				android:textColor="?attr/colorOnSecondaryContainer"
+				android:textSize="13sp"
+				android:clickable="true"
+				android:focusable="true"
+				android:contentDescription="Search for isekai fantasy"
+				android:importantForAccessibility="yes" />
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<ProgressBar
+		android:id="@+id/progressBar_loading"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:visibility="gone"
+		app:layout_constraintTop_toBottomOf="@id/card_cached_badge"
+		app:layout_constraintBottom_toTopOf="@id/chip_group_history"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<LinearLayout
+		android:id="@+id/layout_error"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:padding="24dp"
+		android:visibility="gone"
+		app:layout_constraintTop_toBottomOf="@id/card_cached_badge"
+		app:layout_constraintBottom_toTopOf="@id/chip_group_history"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+
+		<ImageView
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:src="@drawable/ic_error_large"
+			app:tint="?attr/colorError"
+			android:contentDescription="Error Icon" />
+
+		<TextView
+			android:id="@+id/textView_error_message"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:gravity="center"
+			android:textColor="?attr/colorError"
+			android:textSize="15sp"
+			tools:text="Check internet connection" />
+
+		<Button
+			android:id="@+id/button_retry"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:text="Try Again"
+			app:icon="@drawable/ic_retry" />
+
+	</LinearLayout>
+
+	<!-- 11.2 — History chips (dynamically populated from Room) -->
+	<com.google.android.material.chip.ChipGroup
+		android:id="@+id/chip_group_history"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="8dp"
+		android:paddingVertical="4dp"
+		android:visibility="gone"
+		app:singleLine="true"
+		app:layout_constraintBottom_toTopOf="@id/layout_input_bar_wrapper"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<!-- Bottom Input Bar Wrapper -->
+	<FrameLayout
+		android:id="@+id/layout_input_bar_wrapper"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+
+		<LinearLayout
+			android:id="@+id/layout_input_bar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?attr/colorSurfaceContainerHigh"
+			android:layout_margin="8dp"
+			android:elevation="4dp"
+			android:outlineProvider="background"
+			android:gravity="center_vertical"
+			android:orientation="vertical"
+			android:paddingTop="6dp"
+			android:paddingBottom="6dp">
+
+		<!-- Input row -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="center_vertical"
+			android:paddingHorizontal="8dp">
+
+			<EditText
+				android:id="@+id/editText_query"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginStart="8dp"
+				android:layout_marginEnd="8dp"
+				android:background="@drawable/bg_source_badge"
+				android:backgroundTint="?attr/colorSurface"
+				android:hint="e.g., action romance manhwa..."
+				android:imeOptions="actionSend"
+				android:inputType="text"
+				android:paddingHorizontal="16dp"
+				android:paddingVertical="12dp"
+				android:textColor="?attr/colorOnSurface"
+				android:textColorHint="?attr/colorOnSurfaceVariant"
+				android:textSize="15sp"
+				android:minHeight="48dp"
+				android:contentDescription="Manga search input"
+				android:importantForAccessibility="yes"
+				tools:ignore="Autofill" />
+
+			<TextView
+				android:id="@+id/textView_loading_status"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:textColor="?attr/colorSecondary"
+				android:textSize="13sp"
+				android:textStyle="italic"
+				android:visibility="gone"
+				android:accessibilityLiveRegion="polite"
+				tools:text="Thinking..."
+				tools:visibility="visible" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/button_send"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:contentDescription="Send query"
+				app:fabSize="mini"
+				app:srcCompat="@drawable/ic_send"
+				app:tint="?attr/colorOnPrimaryContainer"
+				app:backgroundTint="?attr/colorPrimaryContainer" />
+
+		</LinearLayout>
+
+		<!-- 11.6 — Character counter row -->
+		<TextView
+			android:id="@+id/textView_char_counter"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="16dp"
+			android:gravity="end"
+			android:textColor="?attr/colorOnSurfaceVariant"
+			android:textSize="11sp"
+			android:text="0/200"
+			android:paddingBottom="2dp" />
+
+
+
+	</LinearLayout>
+	</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

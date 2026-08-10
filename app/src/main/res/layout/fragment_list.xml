@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeRefreshLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<com.aman.vanish.core.ui.list.fastscroll.FastScrollRecyclerView
+			android:id="@+id/recyclerView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:clipChildren="false"
+			android:clipToPadding="false"
+			android:orientation="vertical"
+			android:padding="@dimen/list_spacing_normal"
+			tools:layoutManager="com.aman.vanish.core.ui.list.FitHeightLinearLayoutManager"
+			tools:listitem="@layout/item_manga_list" />
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<!-- Exact Futon Blocked State Layout -->
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/cloudflareBlockedLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="?attr/colorSurface"
+		android:visibility="gone"
+		android:padding="16dp">
+
+		<androidx.constraintlayout.widget.Guideline
+			android:id="@+id/iconGuideline"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			app:layout_constraintGuide_percent="0.38" />
+
+		<ImageView
+			android:id="@+id/blockedIcon"
+			android:layout_width="90dp"
+			android:layout_height="90dp"
+			android:src="@drawable/ic_bot_large"
+			app:tint="#FF9E8A"
+			app:layout_constraintBottom_toTopOf="@id/iconGuideline"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<TextView
+			android:id="@+id/blockedTitle"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:paddingHorizontal="32dp"
+			android:text="This source requires solving a captcha to continue"
+			android:textAppearance="?attr/textAppearanceBodyLarge"
+			android:textColor="?attr/colorOnSurface"
+			android:gravity="center"
+			android:maxLines="2"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/iconGuideline" />
+
+		<Button
+			android:id="@+id/buttonSolve"
+			style="@style/Widget.Material3.Button"
+			android:layout_width="180dp"
+			android:layout_height="50dp"
+			android:layout_marginTop="24dp"
+			android:text="Solve"
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			app:backgroundTint="#3A3A4A"
+			app:cornerRadius="28dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/blockedTitle" />
+
+		<Button
+			android:id="@+id/buttonOpenBrowser"
+			style="@style/Widget.Material3.Button.TextButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:text="Open in web browser"
+			android:textColor="?attr/colorPrimary"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/buttonSolve" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

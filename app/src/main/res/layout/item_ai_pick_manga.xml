@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="4dp"
+	app:cardCornerRadius="12dp"
+	app:cardElevation="0dp"
+	app:strokeWidth="0dp"
+	app:cardBackgroundColor="?attr/colorSurfaceContainer">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<com.aman.vanish.image.ui.CoverImageView
+			android:id="@+id/imageView_cover"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:scaleType="centerCrop"
+			android:background="?attr/colorSurfaceVariant"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintDimensionRatio="H,2:3" />
+
+		<!-- Gradient overlay at the bottom of the image for text readability -->
+		<View
+			android:layout_width="0dp"
+			android:layout_height="64dp"
+			android:background="@drawable/bg_gradient_bottom"
+			app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
+			app:layout_constraintStart_toStartOf="@id/imageView_cover"
+			app:layout_constraintEnd_toEndOf="@id/imageView_cover" />
+
+		<!-- Semi-transparent overlay at the top left for badge readability (optional but good for polish) -->
+		<View
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/bg_source_badge"
+			android:backgroundTint="#B3000000"
+			android:visibility="gone"
+			app:layout_constraintTop_toTopOf="@id/textView_source_badge"
+			app:layout_constraintBottom_toBottomOf="@id/textView_source_badge"
+			app:layout_constraintStart_toStartOf="@id/textView_source_badge"
+			app:layout_constraintEnd_toEndOf="@id/textView_source_badge" />
+
+		<TextView
+			android:id="@+id/textView_source_badge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="6dp"
+			android:layout_marginTop="6dp"
+			android:background="@drawable/bg_source_badge"
+			android:paddingHorizontal="6dp"
+			android:paddingVertical="2dp"
+			android:textColor="?attr/colorOnSecondaryContainer"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			app:layout_constraintTop_toTopOf="@id/imageView_cover"
+			app:layout_constraintStart_toStartOf="@id/imageView_cover"
+			tools:text="Asura Scans" />
+
+		<TextView
+			android:id="@+id/textView_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="8dp"
+			android:layout_marginBottom="8dp"
+			android:ellipsize="end"
+			android:maxLines="2"
+			android:textColor="@android:color/white"
+			android:textSize="13sp"
+			android:textStyle="bold"
+			app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			tools:text="Solo Leveling" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

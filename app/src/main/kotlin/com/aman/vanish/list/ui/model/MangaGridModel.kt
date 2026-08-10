@@ -1,0 +1,29 @@
+package com.aman.vanish.list.ui.model
+
+import com.aman.vanish.core.ui.model.MangaOverride
+import com.aman.vanish.list.domain.ReadingProgress
+import com.aman.vanish.list.ui.ListModelDiffCallback.Companion.PAYLOAD_ANYTHING_CHANGED
+import com.aman.vanish.list.ui.ListModelDiffCallback.Companion.PAYLOAD_PROGRESS_CHANGED
+import org.koitharu.kotatsu.parsers.model.Manga
+
+data class MangaGridModel(
+	override val manga: Manga,
+	override val override: MangaOverride?,
+	override val counter: Int,
+	val progress: ReadingProgress?,
+	val isFavorite: Boolean,
+	val isSaved: Boolean,
+	val isPinned: Boolean = false,
+) : MangaListModel() {
+
+	override fun getChangePayload(previousState: ListModel): Any? = when {
+		previousState !is MangaGridModel || previousState.manga != manga -> null
+
+		previousState.progress != progress -> PAYLOAD_PROGRESS_CHANGED
+		previousState.isFavorite != isFavorite ||
+			previousState.isSaved != isSaved ||
+			previousState.isPinned != isPinned -> PAYLOAD_ANYTHING_CHANGED
+
+		else -> super.getChangePayload(previousState)
+	}
+}

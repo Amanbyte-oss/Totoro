@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<!-- Base application theme. -->
+	<style name="Base.Theme.Kotatsu" parent="Theme.Material3.DayNight.NoActionBar">
+
+		<!-- Theme Colors -->
+		<item name="colorPrimary">@color/kotatsu_primary</item>
+		<item name="colorPrimaryContainer">@color/kotatsu_primaryContainer</item>
+		<item name="colorOnPrimary">@color/kotatsu_onPrimary</item>
+		<item name="colorOnPrimaryContainer">@color/kotatsu_onPrimaryContainer</item>
+		<item name="colorPrimaryInverse">@color/kotatsu_inversePrimary</item>
+		<item name="colorSecondary">@color/kotatsu_secondary</item>
+		<item name="colorSecondaryContainer">@color/kotatsu_secondaryContainer</item>
+		<item name="colorOnSecondary">@color/kotatsu_onSecondary</item>
+		<item name="colorOnSecondaryContainer">@color/kotatsu_onSecondaryContainer</item>
+		<item name="colorTertiary">@color/kotatsu_tertiary</item>
+		<item name="colorTertiaryContainer">@color/kotatsu_tertiaryContainer</item>
+		<item name="colorOnTertiary">@color/kotatsu_onTertiary</item>
+		<item name="colorOnTertiaryContainer">@color/kotatsu_onTertiaryContainer</item>
+		<item name="colorSurface">@color/kotatsu_surface</item>
+		<item name="colorSurfaceDim">@color/kotatsu_surfaceDim</item>
+		<item name="colorSurfaceBright">@color/kotatsu_surfaceBright</item>
+		<item name="colorSurfaceContainerLowest">@color/kotatsu_surfaceContainerLowest</item>
+		<item name="colorSurfaceContainerLow">@color/kotatsu_surfaceContainerLow</item>
+		<item name="colorSurfaceContainer">@color/kotatsu_surfaceContainer</item>
+		<item name="colorSurfaceContainerHigh">@color/kotatsu_surfaceContainerHigh</item>
+		<item name="colorSurfaceContainerHighest">@color/kotatsu_surfaceContainerHighest</item>
+		<item name="colorSurfaceVariant">@color/kotatsu_surfaceVariant</item>
+		<item name="colorOnSurface">@color/kotatsu_onSurface</item>
+		<item name="colorOnSurfaceVariant">@color/kotatsu_onSurfaceVariant</item>
+		<item name="colorSurfaceInverse">@color/kotatsu_inverseSurface</item>
+		<item name="colorOnSurfaceInverse">@color/kotatsu_inverseOnSurface</item>
+		<item name="colorOnBackground">@color/kotatsu_onSurface</item>
+		<item name="colorError">@color/error</item>
+		<item name="colorErrorContainer">@color/errorContainer</item>
+		<item name="colorOnError">@color/onError</item>
+		<item name="colorOnErrorContainer">@color/onErrorContainer</item>
+		<item name="colorOutline">@color/kotatsu_outline</item>
+		<item name="colorOutlineVariant">@color/kotatsu_outline</item>
+
+		<!-- Drawables (icons) -->
+		<item name="actionModeCloseDrawable">@drawable/abc_ic_clear_material</item>
+		<item name="actionModeWebSearchDrawable">@drawable/abc_ic_search_api_material</item>
+		<item name="expandCollapseIndicator">@drawable/m3_split_button_chevron_avd</item>
+
+		<!-- Base attributes -->
+		<item name="android:windowLightStatusBar">@bool/light_status_bar</item>
+		<item name="android:statusBarColor">@android:color/transparent</item>
+		<item name="android:navigationBarColor">@color/dim</item>
+		<item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@null</item>
+		<item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
+		<item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
+		<item name="windowActionModeOverlay">true</item>
+
+		<!-- System components styles -->
+		<item name="android:alertDialogTheme">@style/ThemeOverlay.Kotatsu.AlertDialog</item>
+		<item name="alertDialogTheme">@style/ThemeOverlay.Kotatsu.AlertDialog</item>
+		<item name="bottomSheetDialogTheme">@style/ThemeOverlay.Kotatsu.BottomSheetDialog</item>
+		<item name="sideSheetDialogTheme">@style/ThemeOverlay.Kotatsu.SideSheetDialog</item>
+		<item name="recyclerViewStyle">@style/Widget.Kotatsu.RecyclerView</item>
+		<item name="android:dropDownSpinnerStyle">@style/Widget.Kotatsu.Spinner.DropDown</item>
+		<item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat.M3</item>
+		<item name="circularProgressIndicatorStyle">@style/Widget.Kotatsu.CircularProgressIndicator</item>
+		<item name="linearProgressIndicatorStyle">@style/Widget.Kotatsu.LinearProgressIndicator</item>
+		<item name="bottomSheetDragHandleStyle">@style/Widget.Kotatsu.BottomSheet.DragHandle</item>
+		<item name="preferenceTheme">@style/PreferenceThemeOverlay.Kotatsu</item>
+		<!-- Fix crash in A15 -->
+		<item name="actionButtonStyle">@style/Widget.AppCompat.ActionButton</item>
+
+		<!-- Manga grid title under the cover; Expressive overrides both of these to move it on top -->
+		<item name="mangaGridTitleStyle">@style/Widget.Kotatsu.MangaGridTitle</item>
+		<item name="mangaCoverTitleStyle">@style/Widget.Kotatsu.MangaCoverTitle</item>
+		<item name="gridTitleTextAppearance">@style/TextAppearance.Kotatsu.GridTitle</item>
+		<item name="gridTitleTextAppearanceSmall">@style/TextAppearance.Kotatsu.GridTitle.Small</item>
+		<item name="readingProgressStyle">@style/ProgressDrawable</item>
+		<item name="mangaGridSpacing">@dimen/manga_grid_spacing</item>
+
+		<!-- Custom views -->
+		<item name="fastScrollerStyle">@style/Widget.Kotatsu.FastScroller</item>
+		<item name="listItemTextViewStyle">@style/Widget.Kotatsu.ListItemTextView</item>
+		<item name="dotIndicatorStyle">@style/Widget.Kotatsu.DotIndicator</item>
+		<item name="badgeViewStyle">@style/Widget.Kotatsu.BadgeView</item>
+		<item name="coverImageViewStyle">@style/Widget.Kotatsu.ImageView.Cover</item>
+	</style>
+
+	<!--== Default Theme ==-->
+	<style name="Theme.Kotatsu" parent="Base.Theme.Kotatsu" />
+
+
+	<!-- Base ThemeOverlay -->
+	<style name="ThemeOverlay.Kotatsu" parent="ThemeOverlay.Material3.Light" />
+
+	<!-- Monet theme only support S+ -->
+	<style name="ThemeOverlay.Kotatsu.Monet" parent="ThemeOverlay.Material3.DynamicColors.Light" />
+
+	<!-- Expressive Monet theme - Full Material 3 Expressive with bold components -->
+	<style name="ThemeOverlay.Kotatsu.Expressive" parent="ThemeOverlay.Material3Expressive.DynamicColors.DayNight">
+
+		<!-- Expressive vibrant colors -->
+		<item name="elevationOverlayColor">?attr/colorPrimary</item>
+		<!-- Tinted background -->
+		<item name="colorSurface">?attr/colorSurfaceContainerLow</item>
+		<item name="android:colorBackground">?attr/colorSurfaceContainerLow</item>
+		<!-- Elevated elements jump to more chromatic tones for clear separation -->
+		<item name="colorSurfaceContainerHigh">?attr/colorSurfaceVariant</item>
+		<item name="colorSurfaceContainerHighest">?attr/colorSecondaryContainer</item>
+
+		<!-- Dialogs -->
+		<item name="alertDialogTheme">@style/ThemeOverlay.Material3Expressive.Dialog.Alert</item>
+		<item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3Expressive.MaterialAlertDialog</item>
+
+		<!-- App Bar - Flexible app bars with multi-line support -->
+		<item name="appBarLayoutStyle">@style/Widget.Material3Expressive.AppBarLayout</item>
+		<item name="collapsingToolbarLayoutStyle">@style/Widget.Material3Expressive.CollapsingToolbar</item>
+		<item name="collapsingToolbarLayoutMediumStyle">@style/Widget.Material3Expressive.CollapsingToolbar.Medium</item>
+		<item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Material3Expressive.CollapsingToolbar.Large</item>
+
+		<!-- Search - The "app bar with search" pattern. The SearchView variant is what finally turns
+		     containedAnimationEnabled on, so expanding search animates out of the bar instead of
+		     cross-fading over the whole screen; the bar itself uses the Kotatsu subclass so the app
+		     keeps control of its margins and navigation icon. -->
+		<item name="materialSearchBarStyle">@style/Widget.Kotatsu.SearchBar.AppBarWithSearch</item>
+		<item name="materialSearchViewStyle">@style/Widget.Material3Expressive.SearchView.AppBarWithSearch</item>
+
+		<!-- FAB - Expressive shapes with primary container colors -->
+		<item name="floatingActionButtonStyle">@style/Widget.Material3Expressive.FloatingActionButton</item>
+		<item name="floatingActionButtonMediumStyle">@style/Widget.Material3Expressive.FloatingActionButton.Medium</item>
+		<item name="floatingActionButtonLargeStyle">@style/Widget.Material3Expressive.FloatingActionButton.Large</item>
+
+		<!-- Extended FAB - Small, medium, large sizes -->
+		<item name="extendedFloatingActionButtonSmallStyle">
+			@style/Widget.Material3Expressive.ExtendedFloatingActionButton.Small
+		</item>
+		<item name="extendedFloatingActionButtonMediumStyle">
+			@style/Widget.Material3Expressive.ExtendedFloatingActionButton.Medium
+		</item>
+		<item name="extendedFloatingActionButtonLargeStyle">
+			@style/Widget.Material3Expressive.ExtendedFloatingActionButton.Large
+		</item>
+
+		<!-- Buttons - Expressive with shape morph on press, toggle support. The Kotatsu subclasses
+		     only add includeFontPadding=false; see the note beside them in styles.xml. -->
+		<item name="materialButtonStyle">@style/Widget.Kotatsu.Expressive.Button</item>
+		<item name="materialButtonTonalStyle">@style/Widget.Kotatsu.Expressive.Button.Tonal</item>
+		<item name="materialButtonOutlinedStyle">@style/Widget.Kotatsu.Expressive.Button.Outlined</item>
+		<item name="materialButtonElevatedStyle">@style/Widget.Kotatsu.Expressive.Button.Elevated</item>
+		<item name="borderlessButtonStyle">@style/Widget.Kotatsu.Expressive.Button.Text</item>
+		<item name="buttonBarButtonStyle">@style/Widget.Kotatsu.Expressive.Button.Text.Dialog</item>
+		<item name="snackbarButtonStyle">@style/Widget.Kotatsu.Expressive.Button.Text.Snackbar</item>
+		<item name="chipStyle">@style/Widget.Kotatsu.Expressive.Chip.Assist</item>
+		<item name="tabStyle">@style/Widget.Kotatsu.Expressive.TabLayout</item>
+
+		<!-- Icon Buttons - Expressive with round/square shape morph -->
+		<item name="materialIconButtonStyle">@style/Widget.Material3Expressive.Button.IconButton.Standard</item>
+		<item name="materialIconButtonOutlinedStyle">@style/Widget.Material3Expressive.Button.IconButton.Outlined</item>
+		<item name="materialIconButtonFilledStyle">@style/Widget.Material3Expressive.Button.IconButton.Filled</item>
+		<item name="materialIconButtonFilledTonalStyle">@style/Widget.Material3Expressive.Button.IconButton.Tonal</item>
+
+		<!-- Button Groups - Standard and connected variants -->
+		<item name="materialButtonGroupStyle">@style/Widget.Material3Expressive.MaterialButtonGroup</item>
+		<item name="materialButtonToggleGroupStyle">@style/Widget.Material3Expressive.MaterialButtonToggleGroup</item>
+
+		<!-- Navigation - Flexible nav bar with horizontal item support -->
+		<item name="bottomNavigationStyle">@style/Widget.Kotatsu.BottomNavigationView.Expressive</item>
+		<item name="extendedFloatingActionButtonStyle">@style/Widget.Kotatsu.ExtendedFab.Continue</item>
+		<item name="navigationRailStyle">@style/Widget.Material3Expressive.NavigationRailView</item>
+
+		<!-- Toolbar - Expressive with surface variants -->
+		<item name="toolbarStyle">@style/Widget.Material3Expressive.Toolbar</item>
+		<item name="toolbarSurfaceStyle">@style/Widget.Material3Expressive.Toolbar.Surface</item>
+
+		<!-- Floating Toolbar - Vibrant uses primaryContainer background for bold color -->
+		<item name="floatingToolbarStyle">@style/Widget.Material3.FloatingToolbar.Vibrant</item>
+
+		<!-- Progress Indicators - Bold wavy animation style -->
+		<item name="linearProgressIndicatorStyle">@style/Widget.Material3Expressive.LinearProgressIndicator.Wavy</item>
+		<item name="circularProgressIndicatorStyle">@style/Widget.Material3Expressive.CircularProgressIndicator.Wavy</item>
+
+		<!-- Loading Indicator - M3 shape morphing animation -->
+		<item name="loadingIndicatorStyle">@style/Widget.Material3.LoadingIndicator</item>
+
+		<!-- Slider - Medium size (40dp track) for bold, prominent controls -->
+		<item name="sliderStyle">@style/Widget.Material3Expressive.Slider.Medium</item>
+
+		<!-- Lists - Revealable/swipeable list items (alpha06+) -->
+		<item name="listItemRevealLayoutStyle">@style/Widget.Material3Expressive.ListItemRevealLayout</item>
+
+		<!-- App Bar dimensions - Flexible heights -->
+		<item name="collapsingToolbarLayoutMediumSize">@dimen/m3_comp_app_bar_medium_flexible_container_height</item>
+		<item name="collapsingToolbarLayoutLargeSize">@dimen/m3_comp_app_bar_large_flexible_container_height</item>
+		<item name="actionBarSize">@dimen/m3_comp_app_bar_small_container_height</item>
+
+		<!-- Google Sans across the type scale. Every role has to be listed: Material's own text
+		     appearances hard-code a font family, so there is no single attribute that covers them. -->
+		<item name="textAppearanceDisplayLarge">@style/TextAppearance.Kotatsu.Sans.DisplayLarge</item>
+		<item name="textAppearanceDisplayMedium">@style/TextAppearance.Kotatsu.Sans.DisplayMedium</item>
+		<item name="textAppearanceDisplaySmall">@style/TextAppearance.Kotatsu.Sans.DisplaySmall</item>
+		<item name="textAppearanceHeadlineLarge">@style/TextAppearance.Kotatsu.Sans.HeadlineLarge</item>
+		<item name="textAppearanceHeadlineMedium">@style/TextAppearance.Kotatsu.Sans.HeadlineMedium</item>
+		<item name="textAppearanceHeadlineSmall">@style/TextAppearance.Kotatsu.Sans.HeadlineSmall</item>
+		<item name="textAppearanceTitleLarge">@style/TextAppearance.Kotatsu.Sans.TitleLarge</item>
+		<item name="textAppearanceTitleMedium">@style/TextAppearance.Kotatsu.Sans.TitleMedium</item>
+		<item name="textAppearanceTitleSmall">@style/TextAppearance.Kotatsu.Sans.TitleSmall</item>
+		<item name="textAppearanceBodyLarge">@style/TextAppearance.Kotatsu.Sans.BodyLarge</item>
+		<item name="textAppearanceBodyMedium">@style/TextAppearance.Kotatsu.Sans.BodyMedium</item>
+		<item name="textAppearanceBodySmall">@style/TextAppearance.Kotatsu.Sans.BodySmall</item>
+		<item name="textAppearanceLabelLarge">@style/TextAppearance.Kotatsu.Sans.LabelLarge</item>
+		<item name="textAppearanceLabelMedium">@style/TextAppearance.Kotatsu.Sans.LabelMedium</item>
+		<item name="textAppearanceLabelSmall">@style/TextAppearance.Kotatsu.Sans.LabelSmall</item>
+		<item name="android:fontFamily">@font/google_sans</item>
+		<item name="fontFamily">@font/google_sans</item>
+		<!-- Strips the extra band Google Sans's metrics add above and below every line. -->
+		<item name="android:textViewStyle">@style/Widget.Kotatsu.TextView</item>
+
+		<!-- Manga grid titles move onto the artwork, in white with a soft drop shadow so they stay
+		     legible over a bright cover. -->
+		<item name="mangaGridTitleStyle">@style/Widget.Kotatsu.MangaGridTitle.Hidden</item>
+		<item name="mangaCoverTitleStyle">@style/Widget.Kotatsu.MangaCoverTitle.Visible</item>
+		<item name="gridTitleTextAppearance">@style/TextAppearance.Kotatsu.GridTitle.OnCover</item>
+		<item name="gridTitleTextAppearanceSmall">@style/TextAppearance.Kotatsu.GridTitle.OnCover.Small</item>
+
+		<!-- Card status cluster: tonal progress ring and a red new-chapter badge. -->
+		<item name="readingProgressStyle">@style/ProgressDrawable.Expressive</item>
+		<item name="badgeViewStyle">@style/Widget.Kotatsu.BadgeView.Expressive</item>
+		<!-- Covers sit nearly edge to edge, so each card gets as much of its cell as possible. -->
+		<item name="mangaGridSpacing">@dimen/manga_grid_spacing_tight</item>
+
+		<!-- Motion - The spring physics behind every expressive component.
+		     Base.Theme.Kotatsu inherits Theme.Material3.DayNight, which pins these to the Standard
+		     springs. Without overriding them the expressive widgets above still animate with standard
+		     motion, so the bold shapes land but none of the bounce does. -->
+		<item name="motionSpringDefaultSpatial">@style/Motion.Material3.Spring.Expressive.Default.Spatial</item>
+		<item name="motionSpringDefaultEffects">@style/Motion.Material3.Spring.Expressive.Default.Effects</item>
+		<item name="motionSpringFastSpatial">@style/Motion.Material3.Spring.Expressive.Fast.Spatial</item>
+		<item name="motionSpringFastEffects">@style/Motion.Material3.Spring.Expressive.Fast.Effects</item>
+		<item name="motionSpringSlowSpatial">@style/Motion.Material3.Spring.Expressive.Slow.Spatial</item>
+		<item name="motionSpringSlowEffects">@style/Motion.Material3.Spring.Expressive.Slow.Effects</item>
+
+		<!-- Dynamic color theme -->
+		<item name="dynamicColorThemeOverlay">@style/ThemeOverlay.Material3Expressive.DynamicColors.DayNight</item>
+	</style>
+
+	<!-- Changes only for night -->
+	<style name="ThemeOverlay.Kotatsu.Amoled" parent="" />
+
+	<!-- App Widgets -->
+
+	<style name="Theme.Kotatsu.AppWidgetContainer" parent="@style/Theme.MaterialComponents.Light">
+		<item name="android:colorBackground">@color/kotatsu_background</item>
+		<item name="android:panelColorBackground">@color/kotatsu_primaryContainer</item>
+	</style>
+</resources>

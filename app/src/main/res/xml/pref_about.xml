@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:title="@string/about">
+
+	<Preference
+		android:icon="@drawable/ic_info_outline"
+		android:key="app_version"
+		android:persistent="false"
+		android:summary="Visit download page for latest version" />
+
+	<Preference
+		android:icon="@drawable/ic_web"
+		android:key="about_official_website"
+		android:persistent="false"
+		android:summary="@string/url_official_website"
+		android:title="Official Website"
+		app:allowDividerAbove="true" />
+
+	<Preference
+		android:icon="@drawable/ic_send"
+		android:key="about_contact"
+		android:persistent="false"
+		android:summary="@string/url_contact"
+		android:title="Contact Us" />
+
+</PreferenceScreen>
