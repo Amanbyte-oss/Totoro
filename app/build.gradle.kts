@@ -60,6 +60,7 @@ android {
 			localProperties.load(FileInputStream(localPropertiesFile))
 		}
 		resValue("string", "tg_backup_bot_token", localProperties.getProperty("tg_backup_bot_token", ""))
+		buildConfigField("String", "GROQ_API_KEY", "\"${localProperties["GROQ_API_KEY"] ?: ""}\"")
 	}
 
 	signingConfigs {

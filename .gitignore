@@ -123,3 +123,10 @@ totoro-release.keystore
 # --------------------------------------------------------------------
 app/google-services.json
 
+# --------------------------------------------------------------------
+# 14. AI Config with Secrets
+# --------------------------------------------------------------------
+app/src/main/kotlin/com/aman/vanish/ai/AiConfig.kt
+app/src/main/kotlin/com/aman/vanish/ai/AIConfig.kt
+
+
