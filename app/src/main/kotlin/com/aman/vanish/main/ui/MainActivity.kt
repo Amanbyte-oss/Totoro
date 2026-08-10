@@ -144,6 +144,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), AppBarOwner, BottomNav
 		)
 		navigationDelegate.addOnFragmentChangedListener(this)
 		navigationDelegate.onCreate(this, savedInstanceState)
+		setupPushNotifications()
 		viewBinding.textViewTitle?.let { tv ->
 			navigationDelegate.observeTitle().observe(this) { tv.text = it }
 		}
@@ -500,5 +501,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), AppBarOwner, BottomNav
 		}
 		addTransitionListener(listener)
 		awaitClose { removeTransitionListener(listener) }
+	}
+
+	private fun setupPushNotifications() {
+		try {
+			com.google.firebase.messaging.FirebaseMessaging.getInstance().subscribeToTopic("updates")
+				.addOnCompleteListener { task ->
+					val msg = if (task.isSuccessful) "Subscribed to updates topic" else "Subscription failed"
+					android.util.Log.d("KotatsuFCM", msg)
+				}
+		} catch (e: Exception) {
+			android.util.Log.e("KotatsuFCM", "Failed to initialize Firebase Messaging", e)
+		}
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+			if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PERMISSION_GRANTED) {
+				ActivityCompat.requestPermissions(
+					this,
+					arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+					101
+				)
+			}
+		}
 	}
 }

@@ -17,7 +17,6 @@
 -dontwarn coil3.PlatformContext
 
 -keep class com.aman.vanish.settings.NotificationSettingsLegacyFragment
--keep class com.aman.vanish.settings.about.changelog.ChangelogFragment
 
 -keep class com.aman.vanish.core.exceptions.* { *; }
 -keep class com.aman.vanish.core.prefs.ScreenshotsPolicy { *; }
@@ -38,4 +37,10 @@
 -keepclassmembers class com.aman.vanish.ai.** {
     <fields>;
 }
+
+# Firebase
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }
+-keep class com.google.firebase.analytics.** { *; }
+-keep class com.google.android.gms.measurement.** { *; }
 

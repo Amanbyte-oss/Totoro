@@ -117,3 +117,9 @@ totoro-release.keystore
 #    or server sync tokens kept in local.properties or environment variables?
 #    (Do not commit them in gradle.properties or source code!)
 # ====================================================================
+
+# --------------------------------------------------------------------
+# 13. Firebase Services Config
+# --------------------------------------------------------------------
+app/google-services.json
+

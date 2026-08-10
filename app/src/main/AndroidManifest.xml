@@ -314,6 +314,23 @@
 			android:name="com.aman.vanish.scrobbling.discord.ui.DiscordAuthActivity"
 			android:label="@string/discord" />
 
+		<!-- Firebase Messaging Service -->
+		<service
+			android:name="com.aman.vanish.core.KotatsuFirebaseMessagingService"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+
+		<!-- Default Notification Icon and Channel Metadata -->
+		<meta-data
+			android:name="com.google.firebase.messaging.default_notification_icon"
+			android:resource="@mipmap/ic_launcher" />
+		<meta-data
+			android:name="com.google.firebase.messaging.default_notification_channel_id"
+			android:value="totoro_push_notifications" />
+
 		<service
 			android:name="androidx.work.impl.foreground.SystemForegroundService"
 			android:foregroundServiceType="dataSync"

@@ -965,5 +965,14 @@
 	<string name="ai_onboarding_dismiss">Got it</string>
 	<string name="ai_char_counter">%d/200</string>
 	<string name="ai_loading_recommendations">Loading recommendations</string>
+
+	<!-- Placeholders to satisfy resource compiler for other locales -->
+	<string name="about_app_translation_summary">Translate this app</string>
+	<string name="about_app_translation">Translation</string>
+	<string name="allow_unstable_updates">Allow unstable updates</string>
+	<string name="allow_unstable_updates_summary">Receive notifications about unstable builds</string>
+	<string name="user_manual">User manual</string>
+	<string name="changelog">Changelog</string>
+	<string name="changelog_summary">Changes history for recently released versions</string>
 </resources>
 
