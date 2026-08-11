@@ -21,7 +21,7 @@ class KotatsuFirebaseMessagingService : FirebaseMessagingService() {
         Log.d(TAG, "From: ${remoteMessage.from}")
         
         // Support both notification payloads and data payloads
-        val title = remoteMessage.notification?.title ?: remoteMessage.data["title"] ?: "Totoro Update"
+        val title = remoteMessage.notification?.title ?: remoteMessage.data["title"] ?: "TotoroHaven Update"
         val body = remoteMessage.notification?.body ?: remoteMessage.data["body"] ?: "A new update is available!"
         
         sendNotification(title, body)
@@ -33,7 +33,7 @@ class KotatsuFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     private fun sendNotification(title: String, body: String) {
-        val channelId = "totoro_push_notifications"
+        val channelId = "totorohaven_push_notifications"
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -42,12 +42,12 @@ class KotatsuFirebaseMessagingService : FirebaseMessagingService() {
                 "App Updates",
                 NotificationManager.IMPORTANCE_DEFAULT
             ).apply {
-                description = "Notifications for Totoro updates and announcements"
+                description = "Notifications for TotoroHaven updates and announcements"
             }
             notificationManager.createNotificationChannel(channel)
         }
 
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://totoro-blush.vercel.app/")).apply {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://totorohaven-blush.vercel.app/")).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         }
         

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="url_official_website" translatable="false">https://totoro-blush.vercel.app/</string>
-	<string name="url_contact" translatable="false">https://totoro-blush.vercel.app/contact.html</string>
-	<string name="url_download" translatable="false">https://totoro-blush.vercel.app/index.html#download</string>
+	<string name="url_official_website" translatable="false">https://totorohaven-blush.vercel.app/</string>
+	<string name="url_contact" translatable="false">https://totorohaven-blush.vercel.app/contact.html</string>
+	<string name="url_download" translatable="false">https://totorohaven-blush.vercel.app/index.html#download</string>
 	<string name="url_error_report" translatable="false">https://bugs.kotatsu.app/report</string>
 	<string name="account_type_sync" translatable="false">com.aman.vanish.sync</string>
 	<string name="github_updates_repo" translatable="false">Kotatsu-Redo/Kotatsu-Redo</string>

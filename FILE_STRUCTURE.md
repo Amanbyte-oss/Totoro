@@ -1,4 +1,4 @@
-﻿# Kotatsu-Redo File Structure
+# Kotatsu-Redo File Structure
 
 Generated on 2026-08-10. Excludes `build/`, .gradle/, .kotlin/, and IDE directories.
 
@@ -19,7 +19,7 @@ Kotatsu-Redo-devel
 |-- local.properties
 |-- README.md
 |-- settings.gradle
-|-- totoro-release.keystore
+|-- TotoroHaven-release.keystore
     |-- settings.json
     |-- libs/
     |-- schemas/

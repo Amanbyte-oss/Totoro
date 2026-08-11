@@ -821,7 +821,7 @@
     <string name="reader_multitask">ஒரு தனி பணியில் வாசகரைத் திறக்கவும்</string>
     <string name="reader_multitask_summary">ஒரே நேரத்தில் வெவ்வேறு மங்காவுடன் பல வாசகர்களை திறந்து வைக்க உங்களை அனுமதிக்கிறது</string>
     <string name="theme_name_itsuka">5 நாட்கள்</string>
-    <string name="theme_name_totoro">டுடோரோ</string>
+    <string name="theme_name_totorohaven">TotoroHaven</string>
     <string name="book_effect">மஞ்சள் நிற பின்னணி (நீல வடிகட்டி)</string>
     <string name="local_storage_cleanup">உள்ளக சேமிப்பக தூய்மைப்படுத்தல்</string>
     <string name="packup_creation_failed">காப்புப்பிரதியை உருவாக்கத் தவறிவிட்டது</string>

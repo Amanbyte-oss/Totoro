@@ -1,18 +1,18 @@
-# 🐱 Totoro
+# 🐱 TotoroHaven
 
-[![Download Totoro](https://img.shields.io/badge/Download-Totoro%20APK-4CAF50?style=for-the-badge&logo=android&logoColor=white)](https://totoro-blush.vercel.app/#download)
-[![Website](https://img.shields.io/badge/Visit-Website-00bcd4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://totoro-blush.vercel.app/)
+[![Download TotoroHaven](https://img.shields.io/badge/Download-TotoroHaven%20APK-4CAF50?style=for-the-badge&logo=android&logoColor=white)](https://totorohaven-blush.vercel.app/#download)
+[![Website](https://img.shields.io/badge/Visit-Website-00bcd4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://totorohaven-blush.vercel.app/)
 
-Totoro is a free, high-performance Android manga and manhwa reading application. It is built to offer a seamless, instant-reading experience without the hassle of configuring external repositories or hunting down broken extensions.
+TotoroHaven is a free, high-performance Android manga and manhwa reading application. It is built to offer a seamless, instant-reading experience without the hassle of configuring external repositories or hunting down broken extensions.
 
 > [!NOTE]  
-> **Totoro is a modern, feature-rich fork of [Kotatsu](https://github.com/koitharu/kotatsu).** While keeping the solid foundation of the original project, we have introduced game-changing improvements, cutting-edge new features, and robust backend optimizations.
+> **TotoroHaven is a modern, feature-rich fork of [Kotatsu](https://github.com/koitharu/kotatsu).** While keeping the solid foundation of the original project, we have introduced game-changing improvements, cutting-edge new features, and robust backend optimizations.
 
 ---
 
 ## 🚀 Key Improvements & New Features
 
-Compared to the upstream project, Totoro introduces massive enhancements:
+Compared to the upstream project, TotoroHaven introduces massive enhancements:
 
 ### 🤖 1. AI Pick (Powered by Groq)
 Search for your next read using natural language. Want *"an action manhwa with system leveling and romance"*? Simply type it. 
@@ -21,7 +21,7 @@ Search for your next read using natural language. Want *"an action manhwa with s
 * **Graceful Fallbacks**: Intelligent keyword matching automatically kicks in if the user is offline or has reached their rate limits.
 
 ### 🔍 2. Optimized Search & Deduplication
-Searching over **1,200+ built-in sources** simultaneously can lead to cluttered duplicate results. Totoro resolves this with a custom deduplication engine that groups similar titles dynamically, offering a clean, unified list of recommendations.
+Searching over **1,200+ built-in sources** simultaneously can lead to cluttered duplicate results. TotoroHaven resolves this with a custom deduplication engine that groups similar titles dynamically, offering a clean, unified list of recommendations.
 
 ### 🔔 3. Firebase Push Notifications
 Never miss an update on your favorite titles. Integrated with **Firebase Cloud Messaging (FCM)** to deliver instant push notifications whenever new chapters are released.
@@ -52,11 +52,11 @@ Open the project in Android Studio (using Arctic Fox or newer), sync Gradle, and
 
 ## 🌍 Website & Downloads
 
-* **Official Website**: [https://totoro-blush.vercel.app/](https://totoro-blush.vercel.app/)
-* **Download APK**: [Download Totoro](https://totoro-blush.vercel.app/#download)
+* **Official Website**: [https://totorohaven-blush.vercel.app/](https://totorohaven-blush.vercel.app/)
+* **Download APK**: [Download TotoroHaven](https://totorohaven-blush.vercel.app/#download)
 
 ---
 
 ## 🤝 Acknowledgements & License
 
-Totoro is proudly built as a fork of [Kotatsu](https://github.com/koitharu/kotatsu). We express our gratitude to the original developers of Kotatsu and the community for providing a solid baseline. Totoro is released under the same terms of licensing as the upstream project.
+TotoroHaven is proudly built as a fork of [Kotatsu](https://github.com/koitharu/kotatsu). We express our gratitude to the original developers of Kotatsu and the community for providing a solid baseline. TotoroHaven is released under the same terms of licensing as the upstream project.

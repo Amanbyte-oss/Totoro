@@ -36,7 +36,7 @@ class MainMenuProvider(
 		}
 
 		R.id.action_app_update -> {
-			router.openExternalBrowser("https://totoro-blush.vercel.app/index.html#download")
+			router.openExternalBrowser("https://totorohaven-blush.vercel.app/index.html#download")
 			true
 		}
 

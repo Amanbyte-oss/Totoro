@@ -825,7 +825,7 @@
     <string name="reader_multitask">以独立窗口打开阅读器</string>
     <string name="reader_multitask_summary">允许阅读不同漫画时打开多个同时共存的阅读器</string>
     <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
+    <string name="theme_name_totorohaven">TotoroHaven</string>
     <string name="main_screen">主页</string>
     <string name="main_screen_fab">显示浮动继续阅读按钮</string>
     <string name="main_screen_fab_summary">一键续读。这个按钮不会在无痕模式或没有阅读历史时出现</string>

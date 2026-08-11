@@ -830,7 +830,7 @@
     <string name="reader_multitask">Otvori čitač u zasebnom zadatku</string>
     <string name="reader_multitask_summary">Omogućuje istovremeno otvaranje više čitača s različitim mangama</string>
     <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
+    <string name="theme_name_totorohaven">TotoroHaven</string>
     <string name="book_effect">Žućkasta pozadina (plavi filtar)</string>
     <string name="local_storage_cleanup">Čišćenje lokalne memorije</string>
     <string name="packup_creation_failed">Neuspjelo stvaranje sigurnosne kopije</string>

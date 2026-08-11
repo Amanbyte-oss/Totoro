@@ -13,7 +13,7 @@ enum class ColorScheme(
 	@StringRes val titleResId: Int,
 ) {
 
-	DEFAULT(R.style.ThemeOverlay_Kotatsu_Totoro, R.string.theme_name_totoro),
+	DEFAULT(R.style.ThemeOverlay_Kotatsu_TotoroHaven, R.string.theme_name_totorohaven),
 	MONET(R.style.ThemeOverlay_Kotatsu_Monet, R.string.theme_name_dynamic),
 	EXPRESSIVE(R.style.ThemeOverlay_Kotatsu_Expressive, R.string.theme_name_expressive),
 	MIKU(R.style.ThemeOverlay_Kotatsu_Miku, R.string.theme_name_miku),

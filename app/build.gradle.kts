@@ -65,9 +65,9 @@ android {
 
 	signingConfigs {
 		register("release") {
-			storeFile = file("../totoro-release.keystore")
+			storeFile = file("../TotoroHaven-release.keystore")
 			storePassword = "aman123"
-			keyAlias = "totoro"
+			keyAlias = "TotoroHaven"
 			keyPassword = "aman123"
 		}
 	}
